@@ -2,9 +2,11 @@
   "name": "navitiasdk-dependencychecker",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d app",
+    "prestart": "npm run build",
+    "start": "node app/app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,17 @@
   "bugs": {
     "url": "https://github.com/chakkrachak/NavitiaSDK-DependencyChecker/issues"
   },
-  "homepage": "https://github.com/chakkrachak/NavitiaSDK-DependencyChecker#readme"
+  "homepage": "https://github.com/chakkrachak/NavitiaSDK-DependencyChecker#readme",
+  "dependencies": {
+    "enumify": "^1.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-flow-strip-types": "^6.18.0",
+    "babel-plugin-typecheck": "^3.9.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "flow-bin": "^0.61.0"
+  }
 }
